@@ -18,14 +18,14 @@
 
         <div class="row">
             <!-- Mars news -->
-            <div class="col-md-8">
-                <h2>Latest Mars News</h2>
-                <lede> {{ mars_facts['headline'] }} </lede>
+            <div class="col-md-8 col-sm-6">
+                <h2>Latest News</h2>
+                <h4> {{ mars_facts['headline'] }} </h4>
                 <p> {{ mars_facts['article'] }}  </p>
             </div>
             <!-- Mars weather -->
-            <div class="col-md-4">
-                <h2>Current Mars Weather</h2>
+            <div class="col-md-4 col-sm-6">
+                <h2>Current Weather</h2>
                 <p> {{ mars_facts['mars_weather'] }} </p>
             </div>
         </div> <!-- /weather and news row-->
@@ -33,7 +33,7 @@
         <div class="row">
             <!-- Mars image -->
             <div class="col-md-8">
-                <h2>Featured Mars Image</h2>
+                <h2>Featured Image</h2>
                 <img src="{{ mars_facts['featured_image'] }}" alt='featured_image' class="img-thumbnail">
             </div>
             <!-- Mars table -->
@@ -47,7 +47,7 @@
 
         <!-- Mars hemispheres -->
         <div class="row">
-            <div class="col-md-12" style="background-color: #f8f8f8">
+            <div class="col-md-12">
                 <h3 class="text-center">Mars Hemispheres</h3>
                 <hr>
             
