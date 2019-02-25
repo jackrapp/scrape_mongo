@@ -1,0 +1,82 @@
+<!-- Mars landing page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Jumbotron Mars Facts with scrape button -->
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-info btn-lg btn-block" href="/scrape" role="button">Get Data!</a></p>
+        </div>
+
+        <div class="row">
+            <!-- Mars news -->
+            <div class="col-md-8">
+                <h2>Latest Mars News</h2>
+                <lede> {{ mars_facts['headline'] }} </lede>
+                <p> {{ mars_facts['article'] }}  </p>
+            </div>
+            <!-- Mars weather -->
+            <div class="col-md-4">
+                <h2>Current Mars Weather</h2>
+                <p> {{ mars_facts['mars_weather'] }} </p>
+            </div>
+        </div> <!-- /weather and news row-->
+
+        <div class="row">
+            <!-- Mars image -->
+            <div class="col-md-8">
+                <h2>Featured Mars Image</h2>
+                <img src="{{ mars_facts['featured_image'] }}" alt='featured_image' class="img-thumbnail">
+            </div>
+            <!-- Mars table -->
+            <div class="col-md-4">
+                <h2>Mars Facts</h2>
+                   {{ mars_facts['table'] | safe }}
+
+                   
+            </div>
+        </div> <!-- /image and table row -->
+
+        <!-- Mars hemispheres -->
+        <div class="row">
+            <div class="col-md-12" style="background-color: #f8f8f8">
+                <h3 class="text-center">Mars Hemispheres</h3>
+                <hr>
+            
+            <!-- Images sub-columns -->
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="thumbnail">
+                        <img src= "{{ hemispheres_list[0].img_url }}" alt="{{ hemispheres_list[0].title }}">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="thumbnail">
+                        <img src= "{{ hemispheres_list[1].img_url }}" alt="{{ hemispheres_list[1].title }}">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="thumbnail">
+                        <img src= "{{ hemispheres_list[2].img_url }}" alt="{{ hemispheres_list[2].title }}">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a class="thumbnail">
+                        <img src= "{{ hemispheres_list[3].img_url }}" alt="{{ hemispheres_list[3].title }}">
+                    </a>
+                </div>
+            </div> <!-- /Images -->
+        </div> <!-- /Hemispheres -->       
+    </div> <!-- /container-->
+</body>
+</html>
